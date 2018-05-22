@@ -71,9 +71,9 @@ void reconnect() {
     if (client.connect("ESP8266Client")) {
       Serial.println("connected");
       // Once connected, publish an announcement...
-      client.publish("buddi", "Ready to publish");
+      client.publish("out", "Ready to publish");
       // ... and resubscribe
-      client.subscribe("buddy");
+      client.subscribe("in");
     } else {
       Serial.print("failed, rc=");
       Serial.print(client.state());
